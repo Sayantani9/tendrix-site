@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TENDRIX — Bio-Inspired Tentacle Gripper Robotic Arm</title>
+<meta name="description" content="TENDRIX is a bio-inspired cable-tendon robotic arm with a tentacle gripper, ML-assisted grasping, and supercapacitor-backed emergency safe homing. L&T Techgium Hackathon Finalist." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-brand">TENDRIX <span>/ REV. 01</span></div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#innovations">Innovations</a>
+      <a href="#pipeline">Architecture</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#team">Team</a>
+    </div>
+    <a class="nav-cta" href="https://github.com/Sayantani9" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-badges">
+      <span class="badge hot">L&amp;T Techgium Finalist</span>
+      <span class="badge">Industrial Robotics</span>
+      <span class="badge">Computer Vision</span>
+      <span class="badge">Embedded Systems</span>
+    </div>
+    <h1>Manipulation that flexes<br>like biology. Failure that<br><em>fails safely.</em></h1>
+    <p class="hero-sub">TENDRIX is a bio-inspired cable-tendon robotic arm built around a multi-segment tentacle gripper — with ML-assisted grasping and a supercapacitor-backed emergency system that safely releases payloads and homes itself the instant power drops out.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#innovations">See the mechanism →</a>
+      <a class="btn btn-ghost" href="mailto:smb.workspace9@gmail.com">Contact the team</a>
+    </div>
+
+    <div class="schematic reveal">
+      <div class="schematic-frame-label">
+        <span>FIG. 01 — CAD ASSEMBLY, FRONT VIEW</span>
+        <span>SOFTWARE: SOLIDWORKS</span>
+      </div>
+      <div class="schematic-img-wrap">
+        <img src="assets/robotic-arm-hero.jpeg" alt="Annotated CAD render of the TENDRIX arm showing cable-tendon mechanism, base-mounted servo motors, and the multi-segmented tentacle gripper" />
+        <button class="hotspot" style="left:37%; top:23%;" aria-label="Cable-tendon mechanism info">
+          <span class="tip"><b>Cable-Tendon Mechanism</b>Belt-driven joints route motion from base-mounted motors, cutting arm-side inertia.</span>
+        </button>
+        <button class="hotspot" style="left:83%; top:22%;" aria-label="Tentacle gripper info">
+          <span class="tip"><b>Multi-Segmented Tentacles</b>Octopus-inspired segments conform around irregular geometry instead of pinching at fixed points.</span>
+        </button>
+        <button class="hotspot" style="left:20%; top:70%;" aria-label="Base motors info">
+          <span class="tip"><b>Base-Mounted Servo Motors</b>All heavy actuation stays at the base — the arm itself stays light and fast.</span>
+        </button>
+        <button class="hotspot" style="left:46%; top:88%;" aria-label="Base plate info">
+          <span class="tip"><b>360° Base Plate</b>Full-rotation mounting plate carries the belt-drive transmission and homing pivot.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The industrial problem</div>
+      <h2>What happens to a robotic arm when the power just… stops?</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="reveal">
+        <p class="problem-quote">"How can robotic manipulators safely handle unexpected power outages while maintaining adaptive grasping capability for objects of varying geometry and fragility?"</p>
+        <ul class="risk-list">
+          <li>Uncontrolled arm stoppage mid-motion</li>
+          <li>Payload dropping — fragile or hazardous</li>
+          <li>Collision with nearby equipment</li>
+          <li>Production damage and unplanned downtime</li>
+          <li>Operator safety hazards during recovery</li>
+        </ul>
+      </div>
+      <div class="consequence-panel reveal">
+        <div class="eyebrow">Why it matters</div>
+        <p>Manufacturing lines increasingly hand glass, electronics, and irregular parts to rigid manipulators. Traditional arms have no graceful failure mode — a power cut is a hard stop, and hard stops near fragile or moving stock are how products, equipment, and people get hurt.</p>
+        <p>TENDRIX was built to answer that gap directly: mechanical adaptability for the grasp, and a deliberate emergency architecture for the failure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="innovations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Key innovations</div>
+      <h2>Two design decisions carry the whole system.</h2>
+      <p>Everything downstream — the control logic, the emergency behavior, the manufacturability — follows from where the actuators live and how the gripper touches the object.</p>
+    </div>
+    <div class="innov-grid">
+      <div class="innov-card reveal">
+        <div class="num">01 / END EFFECTOR</div>
+        <h3>Bio-inspired tentacle gripper</h3>
+        <p class="desc">Modeled on octopus tentacle mechanics, the gripper conforms around an object's surface instead of relying on a small number of rigid contact points.</p>
+        <div class="spec-table">
+          <div class="spec-row"><span class="k">CONTACT</span><span class="v">Adaptive, multi-point surface conformity</span></div>
+          <div class="spec-row"><span class="k">COVERAGE</span><span class="v">Irregular geometry, variable object size</span></div>
+          <div class="spec-row"><span class="k">FRAGILE PARTS</span><span class="v">Reduced localized contact pressure</span></div>
+          <div class="spec-row"><span class="k">SERVICE</span><span class="v">Modular segments, swap without full teardown</span></div>
+        </div>
+      </div>
+      <div class="innov-card reveal">
+        <div class="num">02 / TRANSMISSION</div>
+        <h3>Cable-tendon actuation</h3>
+        <p class="desc">Actuators stay base-mounted rather than riding out near the gripper — motion is transmitted down the arm through cable-tendon and belt-drive transmission.</p>
+        <div class="spec-table">
+          <div class="spec-row"><span class="k">INERTIA</span><span class="v">Lower moving mass, faster dynamic response</span></div>
+          <div class="spec-row"><span class="k">END WEIGHT</span><span class="v">Lightweight end-effector</span></div>
+          <div class="spec-row"><span class="k">ENERGY</span><span class="v">Improved efficiency vs. distal actuation</span></div>
+          <div class="spec-row"><span class="k">CABLING</span><span class="v">Simplified routing, easier maintenance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">System architecture</div>
+      <h2>The manipulation pipeline, end to end.</h2>
+      <p>A single, ordered path from perception to grasp — each stage handing off exactly one decision to the next.</p>
+    </div>
+    <div class="pipeline reveal">
+      <div class="pipe-node"><div class="tag">01 · SENSE</div><h4>Camera</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">02 · PERCEIVE</div><h4>Computer Vision</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">03 · IDENTIFY</div><h4>Object Classification</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">04 · DECIDE</div><h4>Grasp Planner</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">05 · ACTUATE</div><h4>Motion Controller</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">06 · TRANSMIT</div><h4>Cable-Tendon Arm</h4></div>
+      <div class="pipe-connector"></div>
+      <div class="pipe-node"><div class="tag">07 · GRASP</div><h4>Bio-Tentacle Gripper</h4></div>
+    </div>
+
+    <div class="deliv-grid" style="margin-top:20px;">
+      <div class="deliv-card reveal">
+        <h4>Emergency safe homing</h4>
+        <p>A base-mounted supercapacitor bank supplies enough reserve energy to execute a pre-programmed safe-release-and-homing sequence the instant power is lost — monitored continuously by current sensors on an ESP32 controller.</p>
+      </div>
+      <div class="deliv-card reveal">
+        <h4>ML-assisted grasping</h4>
+        <p>Lightweight machine-learning heuristics run on-device for real-time grip and motion adjustment, tuned for hackathon-grade prototyping through to industrial deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Prototype &amp; demonstrations</div>
+      <h2>TENDRIX in the shop.</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <video controls preload="metadata" poster="assets/robotic-arm-hero.jpeg">
+          <source src="assets/robotic-arm-hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="cap"><span>DEMO — HERO</span><span>MP4</span></div>
+      </div>
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="assets/robotic-arm-hero-video2.mp4" type="video/mp4" />
+        </video>
+        <div class="cap"><span>DEMO — HERO ALT</span><span>MP4</span></div>
+      </div>
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="assets/robotic-arm-video.mp4" type="video/mp4" />
+        </video>
+        <div class="cap"><span>DEMO — FULL RUN</span><span>MP4</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/robotic-arm-hero.jpeg" alt="TENDRIX CAD assembly, annotated front view" />
+        <div class="cap"><span>FIG. 01</span><span>CAD — FRONT VIEW</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/robotic-arm-side.jpeg" alt="Concept illustration of the arm sorting objects into labeled bins by material type" />
+        <div class="cap"><span>FIG. 02</span><span>USE-CASE CONCEPT</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/robotic-arm-side2.jpeg" alt="TENDRIX hackathon abstract and problem statement details" />
+        <div class="cap"><span>FIG. 03</span><span>ABSTRACT SUBMISSION</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Project leadership</div>
+      <h2>Built and led by</h2>
+    </div>
+    <div class="team-panel reveal">
+      <div class="team-avatar">SB</div>
+      <div>
+        <div class="team-name">Sayantani Banerjee</div>
+        <div class="team-role">PROJECT TEAM LEAD · SYSTEMS INTEGRATION LEAD · AI &amp; ROBOTICS RESEARCHER</div>
+        <p class="team-bio">Founder of SHUDDH. Working across computer vision, embedded systems, and sustainable automation, with a research-first approach to hardware.</p>
+        <div class="team-links">
+          <a href="https://github.com/Sayantani9" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/g-sayantani-mb-65337230b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="mailto:smb.workspace9@gmail.com">Email ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>TENDRIX — L&amp;T Techgium Hackathon Finalist</span>
+    <span>© 2026 Sayantani Banerjee</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
